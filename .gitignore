@@ -1,0 +1,9 @@
+.venv/
+__pycache__/
+*.py[cod]
+.env
+# CoCoLoFa text and raw model answers: local only, never re-hosted
+external/
+data/
+benchmark/cocolofa_fd_eval_local.csv
+benchmark/mm_raw_local.jsonl

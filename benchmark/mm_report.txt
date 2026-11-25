@@ -1,0 +1,109 @@
+Multi-model CoCoLoFa study: frozen analysis
+manifest SHA-256 e35b540ec55962eb9de92b9887bd56647f563944b31050163c8fad531b2b9975
+  M1 run 1: 3b993995f48a9a9b873925c92c51179e135cff449576322cf0cbc5fdb9d94725
+  M1 run 2: cb3f97772d611670443b2e0537a2d0462ccedc807b46bbd6b99ea4fdcf931706
+  M1 run 3: 9bbafce1d8a3b218069de0b967484df9997f79c3b725d5fdd2ccaecce0ff930f
+  M2 run 1: e08231f24226c9d0abbbf9bc35517ed826808549d0dff77a71efb9865ad1d263
+  M2 run 2: af34180ceb38a6189d2d80f211f0175ca3d39f19d5caa9d2b201d2f6cd4f8cf7
+  M2 run 3: 797b72fe71382ccf29533dbe5ce07dd16e8c48fba5dd0f358a87684036f0fd43
+  M3 run 1: de67a93851e50960dbc42f3e72da1fb3f1e39ab73eee44792c79752b8f50fc5e
+  M3 run 2: b3330e96164ae66a4aaa53a487407af2fcc1600b98f7d3f0caf9cec672b62def
+  M3 run 3: 775a52dfac5f651a5b7df2a91c9071c80328cf7d9629efb60d4365ddcdab1af1
+writer bootstrap: 10000 kept replicates, seed 20261119, 0 discarded
+
+PRIMARY: writer-equal hard-cell balanced accuracy, run 1, corpus labels
+  M1 gemini-3.1-flash-lite    BA 0.724 [0.629, 0.817]  recall B 0.576  accuracy C 0.872  -> INCONCLUSIVE
+  M2 gemini-3.5-flash-lite    BA 0.681 [0.589, 0.776]  recall B 0.494  accuracy C 0.868  -> INCONCLUSIVE
+  M3 gemma-4-31b-it           BA 0.621 [0.520, 0.721]  recall B 0.422  accuracy C 0.820  -> INCONCLUSIVE
+  M0 gpt-4o-mini (context, no verdict)  BA 0.556 [0.464, 0.652]
+
+Per-cell table, run 1 (comment counts; abstention counted as an error)
+  M1: A correct 100/110 flagged 100 abstained 0 | B correct 84/110 flagged 84 abstained 0 | C correct 94/110 flagged 16 abstained 0 | D correct 97/110 flagged 11 abstained 2
+  M2: A correct 97/110 flagged 97 abstained 0 | B correct 71/110 flagged 71 abstained 0 | C correct 93/110 flagged 14 abstained 3 | D correct 99/110 flagged 9 abstained 2
+  M3: A correct 90/110 flagged 90 abstained 4 | B correct 66/110 flagged 66 abstained 3 | C correct 95/110 flagged 13 abstained 2 | D correct 105/110 flagged 4 abstained 1
+  M0: A correct 103/110 flagged 103 abstained 0 | B correct 60/110 flagged 60 abstained 7 | C correct 86/110 flagged 13 abstained 11 | D correct 90/110 flagged 5 abstained 15
+
+S1 detection gap G (writer-equal; comment-weighted in brackets)
+  M1: G 0.231 [0.021, 0.427] -> UNDETERMINED   (comment-weighted 0.145)
+  M2: G 0.284 [0.063, 0.489] -> UNDETERMINED   (comment-weighted 0.236)
+  M3: G 0.317 [0.133, 0.487] -> PRESENT   (comment-weighted 0.218)
+  M0: G 0.534 [0.350, 0.703] -> PRESENT   (comment-weighted 0.391)
+S1 sensitivity: writers present in both A and B: 15 (88 comments in A, 100 in B)
+  M1: within-writer G on common writers 0.189 [-0.040, 0.401] -> UNDETERMINED
+  M2: within-writer G on common writers 0.273 [0.030, 0.483] -> UNDETERMINED
+  M3: within-writer G on common writers 0.333 [0.180, 0.486] -> PRESENT
+  M0: within-writer G on common writers 0.518 [0.323, 0.706] -> PRESENT
+S2 false-alarm gap, flag rate C minus D (writer-equal; comment-weighted in brackets)
+  M1: 0.019 [-0.087, 0.116]   (comment-weighted 0.045)
+  M2: -0.011 [-0.122, 0.090]   (comment-weighted 0.045)
+  M3: 0.098 [0.015, 0.191]   (comment-weighted 0.082)
+  M0: 0.078 [-0.005, 0.174]   (comment-weighted 0.073)
+
+S3 paired contrasts, run 1, same writer draws (descriptive, unadjusted)
+  M3 - M1 B recall: -0.154 [-0.277, -0.057]  observed difference
+  M3 - M1 gap G: +0.086 [-0.032, +0.221]  no difference detected
+  M3 - M2 B recall: -0.072 [-0.243, +0.090]  no difference detected
+  M3 - M2 gap G: +0.032 [-0.176, +0.249]  no difference detected
+  M2 - M1 B recall: -0.082 [-0.226, +0.066]  no difference detected
+  M2 - M1 gap G: +0.053 [-0.141, +0.240]  no difference detected
+
+S4 writer structure in B
+  largest writer in B: 2 with 53 of 110 comments
+  M1: B recall largest writer 0.925, other writers 0.614; writer-equal 0.576 vs comment-weighted 0.764; BA writer-equal 0.724 vs comment-weighted 0.809
+  M2: B recall largest writer 0.849, other writers 0.456; writer-equal 0.494 vs comment-weighted 0.645; BA writer-equal 0.681 vs comment-weighted 0.745
+  M3: B recall largest writer 0.811, other writers 0.404; writer-equal 0.422 vs comment-weighted 0.600; BA writer-equal 0.621 vs comment-weighted 0.732
+  M0: B recall largest writer 0.774, other writers 0.333; writer-equal 0.361 vs comment-weighted 0.545; BA writer-equal 0.556 vs comment-weighted 0.664
+
+S5 abstentions, coverage, flag-based balanced accuracy
+  M1: abstentions {'insufficient_evidence': 2}; coverage 0.995; accuracy on answered hard items 0.809; flag-based BA (writer-equal) 0.724
+  M2: abstentions {'insufficient_evidence': 5}; coverage 0.989; accuracy on answered hard items 0.756; flag-based BA (writer-equal) 0.694
+  M3: abstentions {'ABSTAIN_FAILED': 10}; coverage 0.977; accuracy on answered hard items 0.749; flag-based BA (writer-equal) 0.643
+  M0: abstentions {'insufficient_evidence': 33}; coverage 0.925; accuracy on answered hard items 0.723; flag-based BA (writer-equal) 0.626
+
+S6 stability across runs
+  M1: identical labels in all runs 0.914; run 1 BA 0.724 INCONCLUSIVE; run 2 BA 0.725 INCONCLUSIVE; run 3 BA 0.732 INCONCLUSIVE; mean over runs 0.727, range 0.724-0.732
+  M2: identical labels in all runs 0.870; run 1 BA 0.681 INCONCLUSIVE; run 2 BA 0.685 INCONCLUSIVE; run 3 BA 0.700 INCONCLUSIVE; mean over runs 0.689, range 0.681-0.700
+  M3: identical labels in all runs 0.757; run 1 BA 0.621 INCONCLUSIVE; run 2 BA 0.582 NOT SUPPORTED; run 3 BA 0.581 NOT SUPPORTED; mean over runs 0.595, range 0.581-0.621  -> run 1 verdict stands, marked UNSTABLE
+
+S7 consensus misses in B, run 1
+  missed by all of M1-M3: 25/110; also by M0: 25
+  identifiers (all four): 3207, 3615, 3785, 4262, 4760, 4826, 4874, 5055, 5196, 5861, 6303, 6333, 6418, 7575, 7595, 7651, 7663, 8737, 8946, 9105, 9318, 9956, 10164, 10614, 10926
+
+S9 writers present in both B and C (sensitivity; writer-equal, run 1)
+  cell A: 25 writers, comments per writer median 2, max 20, writers with one comment 10
+  cell B: 22 writers, comments per writer median 2, max 53, writers with one comment 8
+  cell C: 31 writers, comments per writer median 2, max 26, writers with one comment 10
+  cell D: 33 writers, comments per writer median 2, max 19, writers with one comment 15
+  writers in both B and C: 17; only B: 5; only C: 14
+  bootstrap restricted to these 17 writers, 10000 replicates, seed 20261119, 0 discarded (every drawn writer has comments in B and C)
+  M1: BA on common writers 0.748 [0.638, 0.849]  (recall B 0.672, accuracy C 0.825)
+  M2: BA on common writers 0.692 [0.582, 0.799]  (recall B 0.566, accuracy C 0.817)
+  M3: BA on common writers 0.641 [0.511, 0.766]  (recall B 0.502, accuracy C 0.780)
+  M0: BA on common writers 0.553 [0.440, 0.671]  (recall B 0.423, accuracy C 0.682)
+
+S10 threshold sensitivity (descriptive; the verdict uses 0.75 / 0.60 only).
+  Each pair h/l replaces both thresholds: SUPPORTED if BA >= h and lower bound > l;
+  NOT SUPPORTED if BA <= l and upper bound < h; otherwise INCONCLUSIVE.
+  M1: 0.70/0.55 SUPPORTED; 0.75/0.65 INCONCLUSIVE; 0.80/0.60 INCONCLUSIVE; 0.80/0.65 INCONCLUSIVE
+  M2: 0.70/0.55 INCONCLUSIVE; 0.75/0.65 INCONCLUSIVE; 0.80/0.60 INCONCLUSIVE; 0.80/0.65 INCONCLUSIVE
+  M3: 0.70/0.55 INCONCLUSIVE; 0.75/0.65 NOT SUPPORTED; 0.80/0.60 INCONCLUSIVE; 0.80/0.65 NOT SUPPORTED
+  M0: 0.70/0.55 INCONCLUSIVE; 0.75/0.65 NOT SUPPORTED; 0.80/0.60 NOT SUPPORTED; 0.80/0.65 NOT SUPPORTED
+
+S8 continuity with the first study (comment-weighted, rule of Table 2)
+  M1: comment-weighted BA 0.809, writer CI [0.663, 0.872] -> SUPPORTED; item CI [0.758, 0.859]; easy-cell BA 0.895
+     cell C: neutral 0.964, other fallacy 0.745
+     cell D: neutral 0.891, other fallacy 0.873
+  M2: comment-weighted BA 0.745, writer CI [0.587, 0.818] -> INCONCLUSIVE; item CI [0.691, 0.796]; easy-cell BA 0.891
+     cell C: neutral 0.945, other fallacy 0.745
+     cell D: neutral 0.909, other fallacy 0.891
+  M3: comment-weighted BA 0.732, writer CI [0.563, 0.811] -> INCONCLUSIVE; item CI [0.678, 0.786]; easy-cell BA 0.886
+     cell C: neutral 0.909, other fallacy 0.818
+     cell D: neutral 0.945, other fallacy 0.964
+  M0: comment-weighted BA 0.664, writer CI [0.469, 0.756] -> INCONCLUSIVE; item CI [0.605, 0.721]; easy-cell BA 0.877
+     cell C: neutral 0.764, other fallacy 0.800
+     cell D: neutral 0.800, other fallacy 0.836
+  stricter marker (ignores bare 'or'): cells recomputed from local text
+     M1: hard-cell BA (comment-weighted) 0.891
+     M2: hard-cell BA (comment-weighted) 0.838
+     M3: hard-cell BA (comment-weighted) 0.730
+     M0: hard-cell BA (comment-weighted) 0.621
