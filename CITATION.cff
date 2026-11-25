@@ -1,0 +1,17 @@
+cff-version: 1.2.0
+message: "If you use this work, please cite it as below."
+title: "Explicit-implicit gap in false-dilemma detection across three language models: pre-registration, code and predictions"
+type: software
+authors:
+  - family-names: "Șerban"
+    given-names: "Gabriel Florin"
+    orcid: "https://orcid.org/0009-0000-2266-3356"
+repository-code: "https://github.com/politomorphism/politomorphism-multimodel"
+date-released: 2026-11-25
+license: MIT
+abstract: "Pre-registered test of zero-shot false-dilemma detection by three language models on CoCoLoFa comments without the usual lexical marker. Frozen pre-registration v10, sampling and analysis code, predictions of three runs. Documents in prereg/ and paper/ are CC BY 4.0."
+keywords:
+  - false dilemma
+  - logical fallacy detection
+  - pre-registration
+  - language models

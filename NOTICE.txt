@@ -1,0 +1,32 @@
+NOTICE
+
+Copyright (c) 2026 Șerban, G. F. (ORCID 0009-0000-2266-3356)
+
+Licenses
+  Code: MIT (LICENSE).
+  Documents in prereg/ and paper/: CC BY 4.0 (LICENSE-DOCS.txt).
+  Attribution requested: Șerban, G. F. (2026), with a link to
+  https://github.com/politomorphism/politomorphism-multimodel (see CITATION.cff).
+
+Third-party material
+  This repository does not contain the text of the CoCoLoFa corpus (Yeh, Wan & Huang,
+  EMNLP 2024; github.com/Crowd-AI-Lab/cocolofa). It contains only comment ids, labels
+  and a writer id taken from that corpus, plus the outputs of the language models.
+  The corpus has its own terms and its authors ask to be cited; check their repository
+  before using or redistributing the corpus. The writer ids are pseudonymous numbers
+  from the corpus: do not try to identify the people behind them.
+  Model names (Gemini, Gemma, GPT) belong to their providers. This study is not
+  affiliated with or endorsed by them.
+
+Intended use and limits
+  The code and results are for research on detecting a reasoning pattern in text. They
+  describe the behavior of language models on one corpus under one prompt. They must
+  not be used to judge, rank, sanction or profile individual writers or commenters, and
+  they are not validated for moderation, legal, employment or other decisions about
+  people.
+
+No warranty
+  Code is provided "as is", without warranty (see LICENSE). Results are reported with
+  their uncertainty and may change with model versions. Drafting of the documents was
+  assisted by AI models, as stated inside the documents; the author is responsible for
+  the content.
