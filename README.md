@@ -56,4 +56,4 @@ Zero-shot prompts only; one corpus; hard-cell samples of 110 comments from a sma
 
 ## License
 
-MIT for the code (see `LICENSE`). The documents in `prereg/` and `paper/` are © the author. CoCoLoFa has its own license; check it before reusing the corpus.
+MIT for the code (see `LICENSE`). The documents in `prereg/` and `paper/` are licensed CC BY 4.0 (see `LICENSE-DOCS.txt`): reuse is allowed with credit to Șerban, G. F. and a link to this repository. CoCoLoFa has its own license; check it before reusing the corpus.

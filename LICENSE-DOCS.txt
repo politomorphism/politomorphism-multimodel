@@ -1,0 +1,16 @@
+Documents license: Creative Commons Attribution 4.0 International (CC BY 4.0)
+
+Applies to the documents in prereg/ (pre-registration v10 in .docx and .pdf) and
+paper/ (results papers, English and Romanian), (c) 2026 Șerban, G. F.
+
+You may share and adapt these documents for any purpose, including commercially,
+provided you give appropriate credit (Șerban, G. F., 2026, with a link to
+https://github.com/politomorphism/politomorphism-multimodel), link to the license,
+and indicate if changes were made. You may not suggest that the author endorses you
+or your use.
+
+Full legal text: https://creativecommons.org/licenses/by/4.0/legalcode
+Summary: https://creativecommons.org/licenses/by/4.0/
+
+The code is licensed separately under the MIT License (see LICENSE). The CoCoLoFa
+corpus, which this repository does not contain, has its own license.
